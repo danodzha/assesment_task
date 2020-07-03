@@ -1,1 +1,0 @@
-../../../../modules/monitoring-logging/cloudwatch
