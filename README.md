@@ -20,6 +20,9 @@ RDS
 S3 
 1. MFA delete needs to be enabled to prevent unwanted deletions.
 2. Data can be copied using aws CLI to another account in case of data transfer across accounts.
+Example command below should suffice: 
+
+aws s3 sync s3://SOURCE-BUCKET-NAME s3://DESTINATION-BUCKET-NAME  
 
 Terraform code tree structure:
 ==============================
