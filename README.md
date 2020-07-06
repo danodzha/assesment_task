@@ -9,13 +9,13 @@ AWS Backup service configured by taking into consideration given RTO/RPO will su
 Other things that can be kept in mind as Plan "B"
 ===================================
 AMI and EBS
-1. AMIs and EBS snapshots if not being shared already make sure they are shared between accounts.
+1. AMIs and EBS snapshots if not being shared already need to be shared between accounts.
 2. Using terraform code instances can be launched using existing shared AMIs and EBS snapshots 
-3. After instances launched new AMIs and EBS snapshots need to be created in the account-B   
+3. After instances launched new AMIs and EBS snapshots can be created in the account-B   
 Steps 1 and 3 can be performed using aws CLI
 
 RDS
-1. Snapshot can be created using Lambda, aws CLI on a regular basis and shared with account-B
+1. Snapshots can be created using Lambda or aws CLI on a regular basis and shared with account-B
 
 S3 
 1. MFA delete needs to be enabled to prevent unwanted deletions.
