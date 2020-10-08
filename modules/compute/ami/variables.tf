@@ -1,6 +1,6 @@
 vpc-resource = {
   //////////////////////
-  #       VPC-01       #
+  #       VPC-01       #  
   //////////////////////
   "F5-vpc-01" = {
     "vpc-tag-name"                     = "F5-vpc-01"
@@ -11,9 +11,9 @@ vpc-resource = {
     "assign_generated_ipv6_cidr_block" = "false"
     "enable_classiclink"               = "false"
     "enable_classiclink_dns_support"   = "false"
-    #IGW#
+    ## IGW
     "vpc-igw" = "F5-vpc-01-igw"
-    #Subnets#
+    ## Subnets
     "private-subnets" = [
       "subnet-dmz-a",
       "subnet-dmz-b",
@@ -26,7 +26,7 @@ vpc-resource = {
       "subnet-vdi-a",
       "subnet-vdi-b"
     ]
-    #Route Tables and Subnet associations#
+    ## Route Tables and Subnet associations
     "routes" = {
       "app-a-rtb"      = ["subnet-app-a", "subnet-app-b", "subnet-sec-b", "subnet-ddb-a", "subnet-vdi-a"]
       "app-b-rtb"      = ["subnet-vdi-b"]
@@ -38,7 +38,7 @@ vpc-resource = {
       "tls-test-rtb"   = []
     }
     //////////////////////
-    #    NAT Gateways    #
+    #    NAT Gateways    # 
     ////////////////////// 
     "nat-gws" = {
       "F5-AZ-a-nat-gw" = {
@@ -48,14 +48,14 @@ vpc-resource = {
         "in-subnet" = "subnet-dmz-b"
       }
     }
-    #Gateway Endpoints and Route Table associations#
+    ## Gateway Endpoints and Route Table associations
     "vpc-gw-endpoints" = {
       "s3-endpoint-F5-vpc-01" = ["app-a-rtb", "app-b-rtb", "rds-a-rtb", "rds-b-rtb", "www-ab-rtb"]
     }
     //////////////////////
-    #        VPN         #
+    #         VPN        # 
     //////////////////////   
-    #Virtual Private Gateway#
+    ## Virtual Private Gateway
     "virtual-private-gws" = {
       "F5-Ohio" = {
         "ASN"               = "7224"
@@ -68,52 +68,52 @@ vpc-resource = {
       "F5Ax3"   = "162.17.3.193"
     }
     /////////////////////
-    #      Security     # 
+    #      Security     #
     /////////////////////
-    #NACL and Subnet associations#
+    ## NACL and Subnet associations
     "nacl" = {
       "F5-main-acl"   = ["subnet-dmz-a", "subnet-dmz-b", "subnet-app-a", "subnet-app-b", "subnet-ddb-a", "subnet-ddb-b", "subnet-sec-a", "subnet-sec-b", "subnet-vdi-a", "subnet-vdi-b"]
       "F5-second-acl" = []
     }
-    #Security Groups# 
+    ## Security Groups  
     "security-groups" = [
       "efs-airflow-mt-sg",
-      # "sonicwall-sg",
-      # "airflow-sg",
-      # "docker-sg",
-      # "rds-sg",
-      # "efs-airflow-ec2-sg",
-      # "devops-test-env-sg",
-      # "kibana-sg",
-      # "tls20-test-sg",
-      # "aws-created-directory-controllers-sg",
-      # "reportingservice-sg",
-      # "aws-workspace-sg",
-      # "aws-vpn-client-sg",
-      # "redis-sg",
-      # "workspace-sg",
-      # "postgresql-5lab-sg",
-      # "sftp2-sg",
-      # "sec-sg",
-      # "jenkins-sg",
-      # "f5-ml-sg",
-      # "rds-lambda-sg",
-      # "tableau-sg",
-      # "www-sg",
-      # "haproxy-sg",
-      # "f5-all-sg",
-      # "workspaces-sg",
-      # "default-10-vpc-sg",
-      # "lambda-sg",
-      # "sftp-sg",
-      # "deny-all-sg",
-      # "transfer-sg",
-      # "sql-sg",
-      # "nat-sg",
-      # "app-sg",
-      # "nfs-sg",
-      # "redirect-sg",
-      # "f5-dremio-sg"
+      ##  "sonicwall-sg",
+      ##  "airflow-sg",
+      ##  "docker-sg",
+      ##  "rds-sg",
+      ##  "efs-airflow-ec2-sg",
+      ##  "devops-test-env-sg",
+      ##  "kibana-sg",
+      ##  "tls20-test-sg",
+      ##  "aws-created-directory-controllers-sg",
+      ##  "reportingservice-sg",
+      ##  "aws-workspace-sg",
+      ##  "aws-vpn-client-sg",
+      ##  "redis-sg",
+      ##  "workspace-sg",
+      ##  "postgresql-5lab-sg",
+      ##  "sftp2-sg",
+      ##  "sec-sg",
+      ##  "jenkins-sg",
+      ##  "f5-ml-sg",
+      ##  "rds-lambda-sg",
+      ##  "tableau-sg",
+      ##  "www-sg",
+      ##  "haproxy-sg",
+      ##  "f5-all-sg",
+      ##  "workspaces-sg",
+      ##  "default-10-vpc-sg",
+      ##  "lambda-sg",
+      ##  "sftp-sg",
+      ##  "deny-all-sg",
+      ##  "transfer-sg",
+      ##  "sql-sg",
+      ##  "nat-sg",
+      ##  "app-sg",
+      ##  "nfs-sg",
+      ##  "redirect-sg",
+      ##  "f5-dremio-sg"
     ]
   }
   //////////////////////
@@ -128,14 +128,14 @@ vpc-resource = {
     "assign_generated_ipv6_cidr_block" = "false"
     "enable_classiclink"               = "false"
     "enable_classiclink_dns_support"   = "false"
-    #IGW#
+    ## IGW
     "vpc-igw" = "F5-vpc-02-igw"
-    #Subnets#
+    ## Subnets
     "private-subnets" = ["subnet-dmz2-a", "subnet-dmz2-b"]
-    #Route Tables and Subnet associations#
+    ## Route Tables and Subnet associations
     "routes" = {}
     //////////////////////
-    #    NAT Gateways    #
+    #    NAT Gateways    #    
     ////////////////////// 
     "nat-gws" = {
       "F5-2-AZ-a-nat-gw" = {
@@ -145,21 +145,21 @@ vpc-resource = {
         "in-subnet" = "subnet-dmz2-b"
       }
     }
-    #Gateway Endpoints and Route Table associations#
+    ## Gateway Endpoints and Route Table associations
     "vpc-gw-endpoints" = {}
     //////////////////////
-    #        VPN         #
+    #        VPN         #         
     //////////////////////   
-    #Virtual Private Gateway#
+    ## Virtual Private Gateway
     "virtual-private-gws" = {}
-    #Customer Gateway#
+    ## Customer Gateway
     "customer-gw" = {}
     /////////////////////
-    #      Security     #
+    #     Security      #     
     /////////////////////
-    #NACL and Subnet associations#
+    ## NACL and Subnet associations
     "nacl" = {}
-    #Security Groups# 
+    ## Security Groups
     "security-groups" = []
   }
 }
