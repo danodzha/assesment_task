@@ -1,7 +1,5 @@
 vpc-resource = {
-  //////////////////////
-  # -     VPC-01     - #
-  //////////////////////
+  # VPC-01   
   "F5-vpc-01" = {
     "vpc-tag-name"                     = "F5-vpc-01"
     "vpc-cidr-block"                   = "10.1.0.0/16"
@@ -11,9 +9,9 @@ vpc-resource = {
     "assign_generated_ipv6_cidr_block" = "false"
     "enable_classiclink"               = "false"
     "enable_classiclink_dns_support"   = "false"
-    # - IGW - #
+    # IGW
     "vpc-igw" = "F5-vpc-01-igw"
-    # - Subnets - #
+    # Subnets
     "private-subnets" = [
       "subnet-dmz-a",
       "subnet-dmz-b",
@@ -26,7 +24,7 @@ vpc-resource = {
       "subnet-vdi-a",
       "subnet-vdi-b"
     ]
-    # - Route Tables and Subnet associations - #
+    # Route Tables and Subnet associations
     "routes" = {
       "app-a-rtb"      = ["subnet-app-a", "subnet-app-b", "subnet-sec-b", "subnet-ddb-a", "subnet-vdi-a"]
       "app-b-rtb"      = ["subnet-vdi-b"]
